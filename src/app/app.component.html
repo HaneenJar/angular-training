@@ -1,10 +1,24 @@
+
+<app-hero-item *ngFor="let item of DataArray " [heroData]="item"></app-hero-item>
 <div class="container">
+  <h1>{{'hello'|uppercase}}</h1>
   <div class="row">
-    <div class="col-md-6">
-      hhhhhhhhhhhhhhh
+
+    <div class="col-md-12 mt-2">
+      name: <input type="text" #name class="form-control">
     </div>
-    <div class="col-md-6">
-      iam {{name}} and i am {{position}}
+    <div class="col-md-12 mt-2">
+      position: <input [(ngModel)]="position" class="form-control">
     </div>
+
+
+    <div class="col-md-12 mt-2">
+    <select [(ngModel)]="gender" class="form-control">
+      <option [ngValue]="'female'">female</option>
+      <option [ngValue]="'male'">male</option>
+
+    </select>
+</div>
+    <button class="btn btn-secondary" (click)="onAdd()">Add</button>
   </div>
 </div>
